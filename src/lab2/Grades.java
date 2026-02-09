@@ -1,6 +1,6 @@
 package lab2;
 
-public class Program {
+public class Grades {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -15,7 +15,6 @@ public class Program {
 		for (int i = 0; i < names.length; i++) {
 			results(names[i], grades[i]);
 		}
-		
 	}
 		
 	public static String markGrade(int mark) {
@@ -30,8 +29,15 @@ public class Program {
 		}
 	}
 	
+	private static String markG(int mark) {
+		String result = (mark > 70) ? "Distinction" : 
+			(mark > 60) ? "Merit" :
+				(mark > 50) ? "Pass" : "Fail";
+		return result;
+	}
+	
 	public static void results(String name, int grade) {
-		String result = markGrade(grade);
+		String result = markG(grade);
 		System.out.println(name + " you scored " + grade + " which is a " + result);
 	}
 

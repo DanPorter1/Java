@@ -2,7 +2,7 @@ package labs3;
 
 import java.util.Scanner;
 
-public class Program {
+public class Menu {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -27,6 +27,8 @@ public class Program {
 	public static void lunchQueue() {
 		boolean valid = false;
 		String main = "";
+		int pots;
+		int sprouts;
 		
 		while (!valid) {
 			String main1 = getString("What main dish would you like (Fish, Burgers or Veg) ?");
@@ -39,9 +41,12 @@ public class Program {
 			}
 		}
 		
-		int potatoes = getInt("How many roast potatoes would you like ?");
-		int sprouts = getInt("How many brussel sprouts would you like ?");
-		System.out.println("Hello, your lunch is " + main + " with " + potatoes + " roast potatoes and " + sprouts + " brussel sprouts");
+		
+		pots = getInt("How many roast potatoes would you like ?");
+		
+		sprouts = getInt("How many brussel sprouts would you like ?");
+		System.out.println("Hello, your lunch is " + main + " with " + pots + " roast potatoes and " + sprouts + " brussel sprouts");
 	}
 
 }
+
