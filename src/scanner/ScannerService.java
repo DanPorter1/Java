@@ -15,8 +15,8 @@ public class ScannerService {
     }
 
     public String getString(String prompt) {
+    	System.out.println(prompt);
         while (true) {
-            System.out.println(prompt);
             String input = scanner.nextLine();
 
             if (input.trim().isEmpty()) {
@@ -28,8 +28,8 @@ public class ScannerService {
     }
 
     public int getInt(String prompt) {
+    	System.out.println(prompt);
         while (true) {
-            System.out.println(prompt);
             String input = scanner.nextLine();
 
             try {
@@ -41,8 +41,8 @@ public class ScannerService {
     }
 
     public double getDouble(String prompt) {
+    	System.out.println(prompt);
         while (true) {
-            System.out.println(prompt);
             String input = scanner.nextLine();
 
             try {
@@ -53,45 +53,4 @@ public class ScannerService {
         }
     }
 
-    public float getFloat(String prompt) {
-        while (true) {
-            System.out.println(prompt);
-            String input = scanner.nextLine();
-
-            try {
-                return Float.parseFloat(input.trim());
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid float.");
-            }
-        }
-    }
-
-    public long getLong(String prompt) {
-        while (true) {
-            System.out.println(prompt);
-            String input = scanner.nextLine();
-
-            try {
-                return Long.parseLong(input.trim());
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid long number.");
-            }
-        }
-    }
-
-    public boolean getBoolean(String prompt) {
-        while (true) {
-            System.out.println(prompt + " (true/false)");
-            String input = scanner.nextLine().trim().toLowerCase();
-
-            if (input.equals("true") || input.equals("t") || input.equals("yes") || input.equals("y")) {
-                return true;
-            }
-            if (input.equals("false") || input.equals("f") || input.equals("no") || input.equals("n")) {
-                return false;
-            }
-
-            System.out.println("Please enter true/false or yes/no.");
-        }
-    }
 }
