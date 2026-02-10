@@ -15,13 +15,16 @@ public class Menu {
 		Scanner s = new Scanner(System.in);
 		System.out.println(prompt);
 		int amount = s.nextInt();
+		s.close();
 		return amount;
 	}
 	
 	public static String getString(String prompt) {
 		Scanner e = new Scanner(System.in);
 		System.out.println(prompt);
-		return e.nextLine();
+		String str = e.nextLine();
+		e.close();
+		return str;
 	}
 	
 	public static void lunchQueue() {

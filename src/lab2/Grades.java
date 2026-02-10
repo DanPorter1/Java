@@ -1,44 +1,55 @@
 package lab2;
 
+import java.util.Scanner;
+
 public class Grades {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public void main(String[] args) {
 		int grade = 80;
 		String name = "Daniel";
 		results(name, grade);
 		
 		
 //		Attempt of arrays
-		String[] names = {"Daniel", "Tom", "Chris", "John" };
-		int[] grades = {45, 60, 80, 68};
+		String[] names = {"Daniel", "Tom", "Chris", "John", "Sam" };
+		int[] grades = {45, 60, 80, 68, 99};
 		for (int i = 0; i < names.length; i++) {
 			results(names[i], grades[i]);
 		}
 	}
-		
-	public static String markGrade(int mark) {
-		if (mark > 70) {
-			return"Distinction";
-		} else if (mark > 60 && mark <= 70) {
-			return"Marit";
-		} else if (mark > 50 && mark <= 60) {
-			return"Pass";
-		} else {
-			return"Fail";
-		}
-	}
 	
-	private static String markG(int mark) {
+	private String markG(int mark) {
 		String result = (mark > 70) ? "Distinction" : 
 			(mark > 60) ? "Merit" :
 				(mark > 50) ? "Pass" : "Fail";
 		return result;
 	}
 	
-	public static void results(String name, int grade) {
+	public void scanMark() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter your grade.");
+		int yourGrade = s.nextInt();
+		s.close();
+		results(yourGrade);
+	}		
+	
+	public void scanMark(String name) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter your grade.");
+		int yourGrade = s.nextInt();
+		s.close();
+		results(name, yourGrade);
+	}			
+				
+	public void results(int grade) {
 		String result = markG(grade);
-		System.out.println(name + " you scored " + grade + " which is a " + result);
+		String fResult = String.format("You scored %d which is a %s", grade, result);
+		System.out.println(fResult);
 	}
 
+	public void results(String name, int grade) {
+		String result = markG(grade);
+		System.out.printf("%s you scored %d which is a %s\n", name, grade, result);
+	}
 }
+
