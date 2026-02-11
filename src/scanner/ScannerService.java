@@ -33,7 +33,25 @@ public class ScannerService {
             String input = scanner.nextLine();
 
             try {
-                return Integer.parseInt(input.trim());
+            	return Integer.parseInt(input.trim());
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid integer.");
+            }
+        }
+    }
+    
+    public int getPInt(String prompt) {
+    	System.out.println(prompt);
+        while (true) {
+            String input = scanner.nextLine();
+
+            try {
+            	if (Integer.parseInt(input) > 0) {
+            		return Integer.parseInt(input.trim());
+            	}
+            	else {
+            		System.out.println("Number needs to be posative");
+            	}
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a valid integer.");
             }

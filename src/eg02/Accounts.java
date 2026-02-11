@@ -1,18 +1,18 @@
-package accounts;
+package eg02;
 
 public class Accounts {
 
+	private static int nextId = 1;
 	private int id;
 	private String owner;
 	private double balance;
 	
-	public Accounts(int id, String owner, double balance) {
-		super();
-		this.id = id;
+	public Accounts(String owner, double balance) {
+		this.id = nextId++;
 		this.owner = owner;
 		this.balance = balance;
+		System.out.println("Account Created");
 	}
-	
 
 	@Override
 	public String toString() {
@@ -26,8 +26,13 @@ public class Accounts {
 	}
 	
 	public void withdraw(double amount) {
-		this.balance -= amount;
-		System.out.println(String.format("%s has withdrawn £%.2f: Current balance: £%.2f", owner, amount, balance));
+		if (this.balance >= amount) {
+			this.balance -= amount;
+			System.out.println(String.format("%s has withdrawn £%.2f: Current balance: £%.2f", owner, amount, balance));
+		}
+		else {
+			System.out.println(String.format("You do not have enough to withdraw £%.2f - Current balance is £%.2f", amount, this.balance));
+		}
 	}
 	
 	public void changeName(String name) {
@@ -35,4 +40,11 @@ public class Accounts {
 		this.owner = name;
 		System.out.println(message);
 	}
+	
+	public void addIntrest() {
+		double intrest = 0.025;
+		this.balance += (this.balance * intrest);
+	}
+	
 }
+
