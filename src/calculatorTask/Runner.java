@@ -12,22 +12,22 @@ public class Runner {
 		calc.setNumTwo(s.getDouble("Please enter a valid number."));
 		System.out.println(calc);
 		opp = s.getString("Enter opperator");
+		s.closeScanner();
 		
 		switch (opp) {
-		case "+": calc.setResult(calc.add());
+		case "+": calc.add();
 		break;
-		case "-": calc.setResult(calc.subtract());
+		case "-": calc.subtract();
 		break;
-		case "*": calc.setResult(calc.multiply());
+		case "*": calc.multiply();
 		break;
-		case "/": calc.setResult(calc.divide());
+		case "/": calc.divide();
 		break;
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + opp);
 		}
 		
 		System.out.println(calc.getResult());
-
 	}
 
 }

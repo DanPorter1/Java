@@ -51,20 +51,20 @@ public class Calculator {
 	}
 	
 	// Calc methods
-	public double add() {
-		return this.numOne + this.numTwo;
+	public void add() {
+		setResult(this.numOne + this.numTwo);
 	}
 	
-	public double subtract() {
-		return this.numOne - this.numTwo;
+	public void subtract() {
+		setResult(this.numOne - this.numTwo);
 	}
 	
-	public double multiply() {
-		return this.numOne * this.numTwo;
+	public void multiply() {
+		setResult(this.numOne * this.numTwo);
 	}
 
-	public double divide() {
-		return this.numOne / this.numTwo;
+	public void divide() {
+		setResult(this.numOne / this.numTwo);
 	}
 
 }
