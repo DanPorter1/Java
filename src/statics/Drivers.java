@@ -17,7 +17,7 @@ public class Drivers {
 			"Logan" 
 	};
 	
-	public static RegistrationPlate getNextRegPlate() {
+//	public static RegistrationPlate getNextRegPlate() {
 //		id++;
 //		if (id > names.length) {
 //			id = 0;
@@ -29,6 +29,6 @@ public class Drivers {
 //			String name = registrationPlates[id];
 ////			RegistrationPlate reg = new RegistrationPlate(name);
 //			return reg;
-		}
-	}
+//		}
+//	}
 }

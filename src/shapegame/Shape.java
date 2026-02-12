@@ -1,14 +1,17 @@
 package shapegame;
 
+import java.awt.Color;
+
 public class Shape {
 	
-	public int x, y, w, h;
+	public int x, y, w, h; 
 	private int dirX, dirY;
 	public static int worldW;
 	public static int worldH;
-	private ShapeTypes shapeType;
+	private ShapeTypes shapeType = ShapeTypes.Oval;
+	private Color color = Color.BLUE;
 	
-	public Shape(int x, int y, int w, int h, int dirX, int dirY, ShapeTypes shape) {
+	public Shape(int x, int y, int w, int h, int dirX, int dirY, ShapeTypes shape, Color color) {
 		this.x = x;
 		this.y = y;
 		this.w = w;
@@ -16,7 +19,16 @@ public class Shape {
 		this.dirX = dirX;
 		this.dirY = dirY;
 		this.shapeType = shape;
+		this.color = color;
 //		System.out.println("Shape Created: " + shapeType);
+	}
+	
+	public Shape(int x, int y, int w, int dirX, int dirY) {
+		this.x = x;
+		this.y = y;
+		this.w = w;
+		this.dirX = dirX;
+		this.dirY = dirY;
 	}
 	
 	public Shape(int x, int y, int w, int h) {
@@ -40,6 +52,10 @@ public class Shape {
 	
 	public ShapeTypes getShape() {
 		return this.shapeType;
+	}
+	
+	public Color getColor() {
+		return this.color;
 	}
 }
 

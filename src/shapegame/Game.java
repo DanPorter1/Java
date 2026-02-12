@@ -11,9 +11,9 @@ public class Game extends Canvas {
 
 	Game() {
 		balls = new Shape[3]; 
-		balls[0] = new Shape(5,5,5,5,5,5, ShapeTypes.Arc); 
-		balls[1] = new Shape(10,10,10,10,10,10, ShapeTypes.RoundRectangle); 
-		balls[2] = new Shape(20,20,20,20,20,20, ShapeTypes.ThreeDRectangle);
+		balls[0] = new Shape(15,15,15,15,15,15, ShapeTypes.Oval, Color.GREEN); 
+		balls[1] = new Shape(10,10,10,10,10,10, ShapeTypes.RoundRectangle, Color.GREEN); 
+		balls[2] = new Shape(20,20,20,20,20,20, ShapeTypes.ThreeDRectangle, Color.GREEN);
 		
 		Shape.setWorld(800,800);
 		
@@ -70,6 +70,7 @@ public class Game extends Canvas {
 			case Arc				-> g.drawArc(ball.x, ball.y, ball.w, ball.h, 0, 180);
 			default 				-> g.drawOval(ball.x, ball.y, ball.w, ball.h);
 			}
+			g.setColor(ball.getColor());
 //			g.drawOval(ball.x, ball.y, ball.w, ball.h);
 		}
 	}
