@@ -7,12 +7,13 @@ public class Runner {
 	public static void main(String[] args) {
 		String opp = "";
 		Calculator calc = new Calculator();
-		ScannerService s = new ScannerService();
-		calc.setNumOne(s.getDouble("Please enter a valid number."));
-		calc.setNumTwo(s.getDouble("Please enter a valid number."));
+//		ScannerService s = new ScannerService();
+//		calc.setNumOne(s.getDouble("Please enter a valid number."));
+		calc.setNumOne(InputValidator.inNumber());
+		opp = InputValidator.inOpp();
+		calc.setNumTwo(InputValidator.inNumber());
 		System.out.println(calc);
-		opp = s.getString("Enter opperator");
-		s.closeScanner();
+//		s.closeScanner();
 		
 		switch (opp) {
 		case "+": calc.add();

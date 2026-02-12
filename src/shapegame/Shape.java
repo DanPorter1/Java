@@ -9,7 +9,7 @@ public class Shape {
 	public static int worldW;
 	public static int worldH;
 	private ShapeTypes shapeType = ShapeTypes.Oval;
-	private Color color = Color.BLUE;
+	private Color color = Color.BLACK;
 	
 	public Shape(int x, int y, int w, int h, int dirX, int dirY, ShapeTypes shape, Color color) {
 		this.x = x;
@@ -21,6 +21,15 @@ public class Shape {
 		this.shapeType = shape;
 		this.color = color;
 //		System.out.println("Shape Created: " + shapeType);
+	}
+	
+	public Shape(int x, int y, int w, int h, int dirX, int dirY) {
+		this.x = x;
+		this.y = y;
+		this.w = w;
+		this.h = h;
+		this.dirX = dirX;
+		this.dirY = dirY;
 	}
 	
 	public Shape(int x, int y, int w, int dirX, int dirY) {
