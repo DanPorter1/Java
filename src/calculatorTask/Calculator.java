@@ -66,5 +66,15 @@ public class Calculator {
 	public void divide() {
 		setResult(this.numOne / this.numTwo);
 	}
+	
+	public void calculate(String opp) {
+		switch (opp) {
+		case "+": add(); break;
+		case "-": subtract(); break;
+		case "*": multiply(); break;
+		case "/": divide(); break;
+		default: throw new IllegalArgumentException("Unexpected value: " + opp);
+		}
+	}
 
 }

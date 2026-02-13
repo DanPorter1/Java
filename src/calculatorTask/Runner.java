@@ -1,34 +1,23 @@
 package calculatorTask;
 
-import scanner.ScannerService;
-
 public class Runner {
 
 	public static void main(String[] args) {
-		String opp = "";
+		// New instance of Calc
 		Calculator calc = new Calculator();
-//		ScannerService s = new ScannerService();
-//		calc.setNumOne(s.getDouble("Please enter a valid number."));
+		
+		// Invoke Method if needing multiple calculations
+		loop(calc);
+	}
+	
+	public static void loop(Calculator calc) {
+		// Calc Main
 		calc.setNumOne(InputValidator.inNumber());
-		opp = InputValidator.inOpp();
+		String opp = InputValidator.inOpp();
 		calc.setNumTwo(InputValidator.inNumber());
-		System.out.println(calc);
-//		s.closeScanner();
+		calc.calculate(opp);
 		
-		switch (opp) {
-		case "+": calc.add();
-		break;
-		case "-": calc.subtract();
-		break;
-		case "*": calc.multiply();
-		break;
-		case "/": calc.divide();
-		break;
-		default:
-			throw new IllegalArgumentException("Unexpected value: " + opp);
-		}
-		
+		// Results
 		System.out.println(calc.getResult());
 	}
-
 }

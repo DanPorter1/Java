@@ -20,25 +20,19 @@ public class InputValidator {
 	}
 	
 	public static String inOpp() {
-		System.out.println("Enter opperator");
+		System.out.println("Enter operator");
 		String input = s.next();
 		String opp = null;
 		boolean valid = true;
 		while (valid) {
 			switch (input) {
-				case "+": {
-					opp = "+";
-					valid = false;
-				}
-				case "-": {
-					opp = "-";
-					valid = false;
-				}
-				case "*" -> opp = "*";
-				case "/" -> opp = "/";
-				default -> System.out.println("Invalid opperator");
+				case "+": { opp = "+"; valid = false; break; }
+				case "-": { opp = "-"; valid = false; break; }
+				case "*": { opp = "*"; valid = false; break; }
+				case "/": { opp = "/"; valid = false; break; }
+				default: {System.out.println("Invalid operator");}
 			};
-		return opp;
 		}
+		return opp;
 	}
 }
