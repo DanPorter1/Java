@@ -8,7 +8,6 @@ public class Calculator {
 	
 	// Constructor
 	public Calculator() {
-		System.out.println("Calc Created");
 	}
 
 	// Getters and setters

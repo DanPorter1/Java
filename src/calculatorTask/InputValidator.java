@@ -10,7 +10,7 @@ public class InputValidator {
 	public static double inNumber() {
 		System.out.println("Enter a number");
 		while (true) {
-			String input = s.next();
+			String input = s.nextLine();
 			try {
 				return Double.parseDouble(input.trim());
 			} catch (NumberFormatException e) {
@@ -21,7 +21,7 @@ public class InputValidator {
 	
 	public static String inOpp() {
 		System.out.println("Enter operator");
-		String input = s.next();
+		String input = s.nextLine();
 		String opp = null;
 		boolean valid = true;
 		while (valid) {
@@ -35,4 +35,14 @@ public class InputValidator {
 		}
 		return opp;
 	}
+
+//	public static String menuOpp() {
+//		System.out.println("Choose an option: ");
+//		String input = s.nextLine();
+//		String c = 1;
+//		while (Boolean.parseBoolean(Menu.map.get(c))){
+//
+//		}
+//	}
+
 }
